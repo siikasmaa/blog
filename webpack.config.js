@@ -11,6 +11,13 @@ const alias = { svelte: path.resolve('node_modules', 'svelte') }
 const extensions = ['.mjs', '.js', '.json', '.svelte', '.html']
 const mainFields = ['svelte', 'module', 'browser', 'main']
 
+const commonOptions = {
+  preprocess: sveltePreprocess({
+    typescript: {},
+    scss: {}
+  })
+}
+
 module.exports = {
   client: {
     entry: config.client.entry(),
@@ -29,10 +36,7 @@ module.exports = {
               hotOptions: {
                 optimistic: true
               },
-              preprocess: sveltePreprocess({
-                typescript: {},
-                scss: {}
-              })
+              ...commonOptions
             }
           }
         }
@@ -65,10 +69,7 @@ module.exports = {
               css: false,
               generate: 'ssr',
               dev,
-              preprocess: sveltePreprocess({
-                typescript: {},
-                scss: {}
-              })
+              ...commonOptions
             }
           }
         },
@@ -79,7 +80,7 @@ module.exports = {
               loader: 'html-loader'
             },
             {
-              loader: 'markdown-loader',
+              loader: 'markdown-loader'
             }
           ]
         }

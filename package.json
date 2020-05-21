@@ -10,7 +10,8 @@
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "test": "run-p --race dev cy:run",
+    "deploy": "wrangler publish"
   },
   "dependencies": {
     "compression": "^1.7.1",
