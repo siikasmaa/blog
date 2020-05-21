@@ -1,8 +1,8 @@
 <script>
-  export let segment;
+  export let segment
 </script>
 
-<style>
+<style lang="scss">
   nav {
     align-items: flex-end;
     display: flex;
@@ -12,6 +12,7 @@
     justify-content: flex-end;
     text-transform: uppercase;
   }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -19,32 +20,38 @@
     display: block;
     position: relative;
     margin-left: 20px;
+
+    &:not(.selected) {
+      opacity: 0.7;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      transition: transform 0.3s ease;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #aaa;
+      transform: scaleX(0);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
   }
-  a:not(.selected) {
-    opacity: 0.7;
-  }
-  a::before {
-    content: '';
-    position: absolute;
-    transition: transform .3s ease;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: #AAA;
-    transform: scaleX(0);
-  }
-  a:hover::before,
-  .selected::before {
-    transform: scaleX(1);
-  }
+
   .selected::before {
     background: #fd6378;
+    transform: scaleX(1);
   }
 </style>
 
 <nav>
-  <a class='{segment === undefined ? "selected" : ""}' href='.'>home</a>
-  <a class='{segment === "about" ? "selected" : ""}' href='about'>about</a>
-  <a rel=prefetch class='{segment === "blog" ? "selected" : ""}' href='blog'>blog</a>
+  <a class={segment === undefined ? 'selected' : ''} href=".">home</a>
+  <a class={segment === 'about' ? 'selected' : ''} href="about">about</a>
+  <a rel="prefetch" class={segment === 'blog' ? 'selected' : ''} href="blog">
+    blog
+  </a>
 </nav>

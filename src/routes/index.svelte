@@ -1,14 +1,16 @@
-<style>
-  .home-container {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    margin: 2em 0;
-    min-height: 400px;
-  }
-  .home-copy {
-    flex: 1;
+<style lang="scss">
+  .home {
+    &-container {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      margin: 2em 0;
+      min-height: 400px;
+    }
+    &-copy {
+      flex: 1;
+    }
   }
   h1 {
     font-weight: 700;
@@ -33,13 +35,15 @@
     }
   }
   @media (max-width: 800px) {
-    .home-container {
-      flex-direction: column;
-    }
-    .home-copy {
-      flex: 0;
-      padding-bottom: 2em;
-      text-align: center;
+    .home {
+      &-container {
+        flex-direction: column;
+      }
+      &-copy {
+        flex: 0;
+        padding-bottom: 2em;
+        text-align: center;
+      }
     }
   }
 </style>
