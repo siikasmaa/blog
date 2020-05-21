@@ -1,46 +1,63 @@
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+  .home-container {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 2em 0;
+    min-height: 400px;
+  }
+  .home-copy {
+    flex: 1;
+  }
+  h1 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
+  figure {
+    margin: 0 1em;
+    text-align: center;
+  }
+  figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+  }
+  img {
+    width: 100%;
+    max-width: 400px;
+  }
+  @media (max-width: 1020px) {
+    img {
+      max-width: 300px;
+    }
+  }
+  @media (max-width: 800px) {
+    .home-container {
+      flex-direction: column;
+    }
+    .home-copy {
+      flex: 0;
+      padding-bottom: 2em;
+      text-align: center;
+    }
+  }
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+  <title>Siika writes</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<div class="home-container">
+  <div class="home-copy">
+    <h1>Siika writes a blog</h1>
+  </div>
 
-<figure>
-	<img alt='Success Kid' src='successkid.jpg'>
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Now with hot-reloading</strong></p>
+  <figure>
+    <img alt="Person typing on laptop" src="undraw-illustration.svg" />
+    <figcaption>
+      Illustration from
+      <a href="https://undraw.co" target="_blank">Undraw</a>
+    </figcaption>
+  </figure>
+</div>
