@@ -20,11 +20,14 @@ module.exports = {
 				{
 					test: /\.(svelte|html)$/,
 					use: {
-						loader: 'svelte-loader',
+						loader: 'svelte-loader-hot',
 						options: {
-							dev,
+							dev, // Required for Hot Module Replacement (HMR)
 							hydratable: true,
-							hotReload: false // pending https://github.com/sveltejs/svelte/issues/2377
+              hotReload: dev,
+              hotOptions: {
+                optimistic: true
+              }
 						}
 					}
 				}
@@ -32,8 +35,7 @@ module.exports = {
 		},
 		mode,
 		plugins: [
-			// pending https://github.com/sveltejs/svelte/issues/2377
-			// dev && new webpack.HotModuleReplacementPlugin(),
+			dev && new webpack.HotModuleReplacementPlugin(),
 			new webpack.DefinePlugin({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
