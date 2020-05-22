@@ -14,5 +14,5 @@ Collection of points taken while building this site and using Svelte+Sapper for 
   - Hot reloading brought up there as well...
   - TLDR; Have to use community provided processor (svelte-preprocess)
 - Support for VSCode when you have added the community support preprocessor: https://github.com/sveltejs/svelte-preprocess#with-svelte-vs-code?
-- Found out that Sapper verions <=0.27.11 are vulnerable to Path Traversal
+- Found out that Sapper versions below 0.27.11 are vulnerable to Path Traversal
 - Use external connection to fetch the posts -> transpile Markdown to html/json elsewhere

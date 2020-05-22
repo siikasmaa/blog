@@ -15,7 +15,6 @@
     position: relative;
     margin: 0 auto;
     max-width: 1400px;
-    background-color: white;
     padding: 1em 2em;
     box-sizing: border-box;
     width: 100%;

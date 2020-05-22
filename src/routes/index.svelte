@@ -8,9 +8,6 @@
       margin: 2em 0;
       min-height: 400px;
     }
-    &-copy {
-      flex: 1;
-    }
   }
   h1 {
     font-weight: 700;
@@ -18,16 +15,13 @@
   }
 
   figure {
-    margin: 0 1em;
+    margin: 2em 2em;
     text-align: center;
   }
-  figcaption {
-    font-size: 0.8em;
-    font-style: italic;
-  }
   img {
-    width: 100%;
+    width: 200px;
     max-width: 400px;
+    border-radius: 50%;
   }
   @media (max-width: 1020px) {
     img {
@@ -53,15 +47,11 @@
 </svelte:head>
 
 <div class="home-container">
+  <figure>
+    <img alt="Profile" src="profile_2.svg" />
+  </figure>
   <div class="home-copy">
     <h1>Siika writes a blog</h1>
   </div>
 
-  <figure>
-    <img alt="Person typing on laptop" src="undraw-illustration.svg" />
-    <figcaption>
-      Illustration from
-      <a href="https://undraw.co" target="_blank">Undraw</a>
-    </figcaption>
-  </figure>
 </div>
